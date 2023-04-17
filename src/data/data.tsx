@@ -1,86 +1,57 @@
 import {
   AcademicCapIcon,
-  CalendarIcon,
-  DownloadIcon,
-  FlagIcon,
+  ArrowDownTrayIcon,
   MapIcon,
-  OfficeBuildingIcon,
+  BuildingOfficeIcon,
   SparklesIcon,
-} from '@heroicons/react/outline';
+  TrophyIcon,
+} from '@heroicons/react/24/solid';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import headerImage from '../images/header-background.jpg';
 import profilepic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
-import {
-  About,
-  ContactSection,
-  ContactType,
-  Hero,
-  HomepageMeta,
-  PortfolioItem,
-  SkillGroup,
-  Social,
-  TestimonialSection,
-  TimelineItem,
-} from './dataDef';
+import {About, ContactSection, ContactType, Intro, HomepageMeta, SkillGroup, Social, TimelineItem} from './dataDef';
 
 /**
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Kevin Gay Developer Website',
+  description: 'Personal Website for Kevin Gay',
 };
 
 /**
  * Section definition
  */
 export const SectionId = {
-  Hero: 'hero',
+  Intro: 'Intro',
   About: 'about',
   Contact: 'contact',
-  Portfolio: 'portfolio',
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  Testimonials: 'testimonials',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
 
 /**
- * Hero section
+ * Intro section
  */
-export const heroData: Hero = {
-  imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+export const introData: Intro = {
+  imageSrc: headerImage,
+  name: `I'm Kevin Gay.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a back-end software engineer based in North Carolina with expertise in AWS, databases, API design and
+        implementation, and automated build and deployment. I'm proficient in Typescript/JavaScript and Python, and have
+        a proven track record of delivering scalable and high-performing systems, particularly in the financial
+        technology industry.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        Outside of work, I enjoy playing guitar, surfing, snowboarding, and running. I also enjoy spending quality time
+        with my wife and dog and watching sports.
       </p>
     </>
   ),
@@ -89,7 +60,7 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Resume',
       primary: true,
-      Icon: DownloadIcon,
+      Icon: ArrowDownTrayIcon,
     },
     {
       href: `#${SectionId.Contact}`,
@@ -104,231 +75,209 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `BIO`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
+    {label: 'Location', text: 'Charlotte, North Carolina', Icon: MapIcon},
+    {label: 'Interests', text: 'Surfing, Playing guitar, Snowboarding', Icon: SparklesIcon},
+    {label: 'Sports', text: 'Carolina Panthers, Charlotte FC', Icon: TrophyIcon},
+    {label: 'Study', text: 'University of North Carolina Wilmington', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Apiture', Icon: BuildingOfficeIcon},
   ],
 };
+
+/**
+ * TODO: Add certifications and publications section
+ */
 
 /**
  * Skills section
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
-    skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Frontend development',
-    skills: [
-      {
-        name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
-        level: 7,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
-      },
-    ],
-  },
-  {
     name: 'Backend development',
     skills: [
       {
         name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
         level: 9,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'Python',
+        level: 5,
       },
       {
-        name: 'Swift',
+        name: 'C#',
         level: 3,
       },
     ],
   },
-];
-
-/**
- * Portfolio section
- */
-export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage1,
+    name: 'Databases',
+    skills: [
+      {
+        name: 'MySQL',
+        level: 9,
+      },
+      {
+        name: 'NoSQL',
+        level: 6,
+      },
+      {
+        name: 'Data Warehouses',
+        level: 2,
+      },
+    ],
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage2,
-  },
-  {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage11,
+    name: 'Frontend development (very little)',
+    skills: [
+      {
+        name: 'React',
+        level: 2,
+      },
+      {
+        name: 'Angular',
+        level: 2,
+      },
+    ],
   },
 ];
 
 /**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
+ * Resume section
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2019',
+    location: 'University of North Carolina Wilmington',
+    title: 'M.S. Computer Science and Information Systems ',
+    content: <p></p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2017',
+    location: 'University of North Carolina Wilmington',
+    title: 'B.S. Computer Science, Minor: Mathematics',
+    content: <p></p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'November 2021 - Present',
+    location: 'Apiture',
+    title: 'Senior Software Engineer',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul>
+        <li>
+          • Worked on several REST APIs, which utilize several AWS services, namely ECS (Docker containers), Lambda, API
+          Gateway, CloudFormation, RDS, and DynamoDB. The business logic is handled using TypeScript. The work is done
+          as part of a sprint team where tools include JIRA, Confluence, and Bitbucket. Unit tests are written in
+          Jasmine and Jest for any additions or changes of features. I also created automated API contract tests for any
+          new API endpoints.
+        </li>
+        <br />
+        <li>
+          • Designed and implemented a database migration strategy across numerous dev and production environments
+          (using Lambda, Jenkins, Gulp, Node, MySQL and TypeORM). This project was later converted to use ECS Fargate
+          containers, since Lambda has a runtime limit. This system has been working in production for several years
+          now, and is integrated with CICD for releases. This project is definitely my claim to fame thus far.
+        </li>
+        <br />
+        <li>
+          • Increased performance of MySQL database by adding indexes based on frequently used queries • Implemented
+          schema validation between API specification documents and API request bodies. Validates data types, required
+          fields, format types (date-time), and length/precision constraints.
+        </li>
+        <br />
+        <li>• Time zone handling for datetimes (mainly transfer dates)</li>
+        <br />
+        <li>• Encryption in transit for passwords, tax IDs, and other personal information</li>
+        <br />
+        <li>
+          • Mobile check deposit processing using alerts from a third party. Several processing workflows were developed
+          as part of this work, and are controlled by configuration values. The workflows determine when the transaction
+          is sent to the core and when notifications are sent.
+        </li>
+        <br />
+        <li>
+          • Built custom registration workflows for several clients, including severable configurable banking
+          application questions • Write documentation for all new libraries, features, and configurations
+        </li>
+      </ul>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'January 2019 - November 2021',
+    location: 'Apiture',
+    title: 'Software Engineer',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul>
+        <li>
+          <li>
+            • Built an entire Wire Transfers API, with support for payees and trailblazing for other payment types, such
+            as p2p and billpay. This work included database design, API implementation, unit tests (in jest), and API
+            tests.
+          </li>
+        </li>
+      </ul>
+    ),
+  },
+  {
+    date: 'April 2018 - December 2018',
+    location: 'Apiture',
+    title: 'Software Development Intern',
+    content: (
+      <ul>
+        <li>
+          • Worked on several serverless REST APIs which utilize the following AWS services: CloudFormation, Lambda, S3,
+          DynamoDB, Route53, Cognito, RDS, and API Gateway. The business logic is handled using TypeScript. The work is
+          done as part of a sprint team where requirements are managed using Jira and source control was managed using
+          Bitbucket. Unit tests were written in Jasmine for any additions or changes of features.
+        </li>
+        <br />
+        <li>• Migrated several microservices from using Sequelize to TypeORM</li>
+        <br />
+        <li>
+          • Created a logging package that logs all requests made to each endpoint. The logger puts the data into an AWS
+          Kinesis stream which then inserts the data into DynamoDB tables. Package exists as an internal npm repo in
+          nexus
+        </li>
+        <br />
+        <li>• Migrated several microservices from using Sequelize to TypeORM</li>
+        <br />
+        <li>• Altered specifications of API Designs using Swagger and OpenAPI 2.0</li>
+        <br />
+        <li>• Improved Jenkins CICD pipeline by adding code coverage checks and detailed unit test reporting</li>
+        <br />
+        <li>• Added to CloudFormation deployment scripts using serverless package</li>
+      </ul>
+    ),
+  },
+  {
+    date: 'November 2017 - April 2018',
+    location: 'Apiture',
+    title: 'Software Quality Assurance Intern',
+    content: (
+      <ul>
+        <li>
+          • Created 100s of automated tests for the user interfaces of multiple web applications and a mobile
+          application (on both iOS and Android) using Java and Selenium WebDriver
+        </li>
+        <br />
+        <li>
+          • Built the framework for the UI tests of a new web application using TypeScript, webdriver.io, and the Page
+          Object Model design pattern. Automated UI tests are still being developed over this framework
+        </li>
+        <br />
+        <li>
+          • Implemented a java package that checks the API calls to ensure what is being returned is displayed correctly
+          on the UI
+        </li>
+        <br />
+        <li>• Created test cases in TestRails</li>
+      </ul>
     ),
   },
 ];
-
-/**
- * Testimonial section
- */
-export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
-  testimonials: [
-    {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
-    },
-    {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
-    },
-    {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
-    },
-  ],
-};
 
 /**
  * Contact section
@@ -336,27 +285,22 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: 'Connect with me via the following links.',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: '12.kevin.gay@gmail.com',
+      href: 'mailto:12.kevin.gay@gmail.com',
     },
     {
-      type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
-    },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      type: ContactType.LinkedIn,
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/kevin-m-gay/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'kevingay',
+      href: 'https://github.com/kevingay',
     },
   ],
 };
@@ -365,9 +309,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/kevingay'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/kevin-m-gay/'},
 ];
