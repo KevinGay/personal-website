@@ -38,7 +38,7 @@ interface IntroActionItem {
  */
 export interface About {
   profileImageSrc?: string;
-  description: string;
+  description?: string;
   aboutItems: AboutItem[];
 }
 

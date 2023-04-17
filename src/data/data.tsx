@@ -75,7 +75,8 @@ export const introData: Intro = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `BIO`,
+  // TODO: add description?
+  // description: ``,
   aboutItems: [
     {label: 'Location', text: 'Charlotte, North Carolina', Icon: MapIcon},
     {label: 'Interests', text: 'Surfing, Playing guitar, Snowboarding', Icon: SparklesIcon},
@@ -150,19 +151,28 @@ export const education: TimelineItem[] = [
     date: '2019',
     location: 'University of North Carolina Wilmington',
     title: 'M.S. Computer Science and Information Systems ',
-    content: <p></p>,
+    content: <p>Grade: 4.0 GPA</p>,
   },
   {
     date: '2017',
     location: 'University of North Carolina Wilmington',
     title: 'B.S. Computer Science, Minor: Mathematics',
-    content: <p></p>,
+    content: (
+      <>
+        <p>Grade: 3.7 GPA</p>
+        <br />
+        <p>
+          Activities and societies: Upsilon Pi Epsilon Computing Honor Society Chapter President, recipient of Upsilon
+          Pi Epsilon honorable mention scholarship in 2017
+        </p>
+      </>
+    ),
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'November 2021 - Present',
+    date: 'Nov 2021 - Present',
     location: 'Apiture',
     title: 'Senior Software Engineer',
     content: (
@@ -206,7 +216,7 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    date: 'January 2019 - November 2021',
+    date: 'Jan 2019 - Nov 2021',
     location: 'Apiture',
     title: 'Software Engineer',
     content: (
@@ -222,7 +232,7 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    date: 'April 2018 - December 2018',
+    date: 'Apr 2018 - Dec 2018',
     location: 'Apiture',
     title: 'Software Development Intern',
     content: (
@@ -253,7 +263,7 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    date: 'November 2017 - April 2018',
+    date: 'Nov 2017 - Apr 2018',
     location: 'Apiture',
     title: 'Software Quality Assurance Intern',
     content: (
@@ -274,6 +284,37 @@ export const experience: TimelineItem[] = [
         </li>
         <br />
         <li>• Created test cases in TestRails</li>
+      </ul>
+    ),
+  },
+  {
+    date: 'Dec 2015 - May 2019',
+    location: 'Face Aging Group',
+    title: 'Graduate Researcher / Software Engineer',
+    content: (
+      <ul>
+        <li>
+          • Contracted by army to build circuit board component recognition system. I built the front-end component that
+          abstracts the back-end deep learning networks, displays the results, allows the user to edit and save the
+          results, and processes the images to optimize the inputs of the network (Using PyQt/Python)
+        </li>
+        <br />
+        <li>
+          • Designed and built multiple versions of an image annotation tool. The tool is used by entire group for
+          annotating images for PCB component recognition, emotion detection, and tattoo/piercing detection for Oak
+          Ridge National Lab and the Army
+        </li>
+        <br />
+        <li>
+          • Created an HD dataset of over 200 printed circuit boards using image stacking and stitching technology
+        </li>
+        <br />
+        <li>• Designed the lab's website in WordPress</li>
+        <li>• Used webscraping (Selenium WebDriver) and face processing tools to create datsets</li>
+        <li>
+          • Presented on work numerous times for the CIA, Army, and Chancellor and Deans of UNCW. Also presented for
+          general public at a few conferences
+        </li>
       </ul>
     ),
   },
